@@ -1,6 +1,6 @@
 
 var mapId = document.getElementById('mapId');
-var submit = document.getElementById('getLocationButton')
+var submit = document.getElementById('submit')
 
 
 const loadMap = ()  => {
