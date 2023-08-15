@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Visualization</title>
+    <style>
+        #mapCanvas {
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Location Visualization</h1>
+    </header>
+    <p>Welcome to the location visualization tool. Click the button below to get your current location.</p>
+    <button id="getLocationButton">Get My Location</button>
+    <div id="mapId"  style="width: 800px; height: 600px;" width="800" height="600"></div>
+
+    <!-- Load Bing Maps API -->
+    <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=AmPo7Obw7MXmyo3ayIEiSlRIveTa4HQdJRmoUt9Zi8OrYSOUMLC-LRhxWAc0nwqb&callback=loadMap" async defer></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
