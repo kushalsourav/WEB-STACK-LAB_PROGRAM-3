@@ -3,26 +3,30 @@ var mapId = document.getElementById('mapId');
 var submit = document.getElementById('getLocationButton')
 
 
- function loadMap() {
-     var map = new Microsoft.Maps.Map(mapId, {
+const loadMap = ()  => {
+     new Microsoft.Maps.Map(mapId, {
          credentials: 'AmPo7Obw7MXmyo3ayIEiSlRIveTa4HQdJRmoUt9Zi8OrYSOUMLC-LRhxWAc0nwqb'
      });
  }
 
- function locateSuccess(position) {
-     var map = new Microsoft.Maps.Map(mapId);
+const locateSuccess = (position) => {
+     let map = new Microsoft.Maps.Map(mapId);
+     let loc = new Microsoft.Maps.Location(position.coords.latitude, position.coords.longitude)
+     let pin = new Microsoft.Maps.Pushpin(loc);
+     map.entities.push(pin);
      map.setView({
-         center: new Microsoft.Maps.Location(position.coords.latitude, position.coords.longitude),
+         center: loc,
          zoom: 15
+
      });
 
  }
 
- function locateFail(error) {
+const locateFail = (error) => {
      alert('Geolocation failed: ' + error.message);
  }
 
- function getLocation() {
+const getLocation = () =>  {
      if (navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(locateSuccess, locateFail);
      } else {
